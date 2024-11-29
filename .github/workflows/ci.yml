@@ -16,7 +16,7 @@ jobs:
         os: [windows-latest]  
 
     env:
-      Project_Name: Lab6/UnitTest.csproj
+      Project_Name: Lab6/UnitTests.csproj
 
     steps:
     - name: Checkout repository
