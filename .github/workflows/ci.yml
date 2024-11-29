@@ -34,10 +34,10 @@ jobs:
       run: dotnet build ${{ env.Solution_Name }} --configuration Release --no-restore 
 
     - name: Run LibraryTests
-      run: dotnet test Lab6/LibraryTests.csproj --no-restore --verbosity normal  
+      run: dotnet test Lab6/LibraryTests.cs --no-restore --verbosity normal  
 
     - name: Run UserTests
-      run: dotnet test Lab6/UserTests.csproj --no-restore --verbosity normal  
+      run: dotnet test Lab6/UserTests.cs --no-restore --verbosity normal  
 
     - name: Run BookTests
-      run: dotnet test Lab6/BookTests.csproj --no-restore --verbosity normal  
+      run: dotnet test Lab6/BookTests.cs --no-restore --verbosity normal  
