@@ -16,7 +16,7 @@ jobs:
         os: [windows-latest]  
 
     env:
-      Solution_Name: Lab6/Lab6.sln  
+      Project_Name: Lab6/UnitTest.csproj
 
     steps:
     - name: Checkout repository
@@ -33,11 +33,5 @@ jobs:
     - name: Build solution
       run: dotnet build ${{ env.Solution_Name }} --configuration Release --no-restore 
 
-    - name: Run LibraryTests
-      run: dotnet test Lab6/LibraryTests.cs --no-restore --verbosity normal  
-
-    - name: Run UserTests
-      run: dotnet test Lab6/UserTests.cs --no-restore --verbosity normal  
-
-    - name: Run BookTests
-      run: dotnet test Lab6/BookTests.cs --no-restore --verbosity normal  
+    - name: Run all unit tests
+      run: dotnet test ${{ env.Project_Name }} --no-restore --verbosity normal
