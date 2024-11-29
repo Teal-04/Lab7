@@ -28,10 +28,10 @@ jobs:
         dotnet-version: '8.0.x'  
 
     - name: Restore NuGet packages
-      run: dotnet restore ${{ env.Solution_Name }}  
+      run: dotnet restore ${{ env.Project_Name }}  
 
     - name: Build solution
-      run: dotnet build ${{ env.Solution_Name }} --configuration Release --no-restore 
+      run: dotnet build ${{ env.Project_Name }} --configuration Release --no-restore 
 
     - name: Run all unit tests
       run: dotnet test ${{ env.Project_Name }} --no-restore --verbosity normal
