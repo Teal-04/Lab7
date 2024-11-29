@@ -22,9 +22,6 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: List files in workspace
-      run: ls -R
-
     - name: Install .NET Core
       uses: actions/setup-dotnet@v4
       with:
@@ -34,7 +31,13 @@ jobs:
       run: dotnet restore ${{ env.Solution_Name }}  
 
     - name: Build solution
-      run: dotnet build ${{ env.Project_Name }} --configuration Release --no-restore 
+      run: dotnet build ${{ env.Solution_Name }} --configuration Release --no-restore 
 
-    - name: Run all unit tests
-      run: dotnet test ${{ env.Project_Name }} --no-restore --verbosity normal
+    - name: Run LibraryTests
+      run: dotnet test Lab6/LibraryTests.cs --no-restore --verbosity normal  
+
+    - name: Run UserTests
+      run: dotnet test Lab6/UserTests.cs --no-restore --verbosity normal  
+
+    - name: Run BookTests
+      run: dotnet test Lab6/BookTests.cs --no-restore --verbosity normal  
