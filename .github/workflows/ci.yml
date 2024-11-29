@@ -16,7 +16,7 @@ jobs:
         os: [windows-latest]  
 
     env:
-      Solution_Name: Lab6.sln  
+      Solution_Name: Lab6/Lab6.sln  
 
     steps:
     - name: Checkout repository
