@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]  
+        os: [windows-latest]  
 
     env:
       Solution_Name: Lab6.sln  
